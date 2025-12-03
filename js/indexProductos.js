@@ -1,6 +1,4 @@
-// ==============================================================
 //  UTILIDADES DEL CARRITO (MISMA LÓGICA DEL CARRITO OFICIAL)
-// ==============================================================
 //localStorage.clear();
 // Obtener carrito plano
 function obtenerCarritoPlano() {
@@ -94,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     Agregar al carrito
                 </button>
 
-                <a href="producto.html?id=${prod.id}" 
+                <a href="Producto.html?id=${prod.id}" 
                 class="boton ver-detalle" 
                 style="margin-top:8px; display:inline-block;">
                     Ver detalle
