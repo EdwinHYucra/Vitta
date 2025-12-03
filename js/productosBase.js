@@ -217,7 +217,7 @@ const productosBase = [
         stock: 70, 
         imagenPrincipal: "img/Productos/granos_y_harina/oreo.jpeg", 
         miniaturas: [
-            "img/Productos/snacks/oreo2.webp"
+            "img/Productos/granos_y_harina/oreo2.webp"
         ], 
         descripcionBreve: "Galletas rellenas clásicas.",
         descripcionDetalles: "Paquete de 108g. Perfectas para compartir o acompañar leche." 
