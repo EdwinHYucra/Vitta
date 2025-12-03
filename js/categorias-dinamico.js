@@ -87,7 +87,7 @@ function cargarProductos(slugCategoria = null, listaPersonalizada = null) {
                         Agregar
                     </button>
 
-                    <a class="boton" href="producto.html?id=${prod.id}">Ver detalle</a>
+                    <a class="boton" href="Producto.html?id=${prod.id}">Ver detalle</a>
                 </div>
             </div>
         `;
