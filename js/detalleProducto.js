@@ -61,21 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // ========================
 
     document.getElementById("btnAgregarCarrito").addEventListener("click", () => {
+    
+    const cant = Number(document.getElementById("cantidad").value);
 
-        let cant = Number(document.getElementById("cantidad").value);
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-        const existente = carrito.find(x => x.id === producto.id);
-
-        if (existente) {
-            existente.cantidad += cant;
-        } else {
-            carrito.push({ id: producto.id, cantidad: cant });
-        }
-
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        alert("Producto agregado al carrito");
-    });
+    for (let i = 0; i < cant; i++) {
+        agregarAlCarrito(
+            producto.id,
+            producto.nombre,
+            producto.precio,
+            producto.imagenPrincipal,
+            producto.tag || "Producto Vitta"
+        );
+    }
+});
 
     // ========================
     // Relacionados
