@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <h3 class="relacionado-titulo">${p.nombre}</h3>
         <p class="relacionado-ahora">S/ ${p.precio.toFixed(2)}</p>
-        <a href="producto.html?id=${p.id}" class="boton boton-primario">Ver producto</a>
+        <a href="Producto.html?id=${p.id}" class="boton boton-primario">Ver producto</a>
     </article>
 `).join("");
 
