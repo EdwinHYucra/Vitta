@@ -223,7 +223,7 @@ input.addEventListener("input", () => {
     dropdown.querySelectorAll(".item-sugerencia").forEach(item => {
         item.addEventListener("click", () => {
             const id = item.dataset.id;
-            window.location.href = `producto.html?id=${id}`;
+            window.location.href = `Producto.html?id=${id}`;
         });
     });
 
