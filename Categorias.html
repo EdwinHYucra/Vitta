@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" href="img/iconos/IconoP.png"/>
+        <title>Listado de Categorías – Vitta</title>
+
+        <!-- ESTILOS -->
+        <link rel="stylesheet" href="css/categorias.css" />
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <script src="js/header.js"></script>
+
+        <main class="contenedor pagina-listado">
+
+            <!-- ===================== CATEGORÍAS DINÁMICAS ===================== -->
+            <section class="bloque-categorias" aria-label="Explora por categoría">
+                <h1 class="bloque-titulo">Explora por categoría</h1>
+
+                <div class="carrusel-wrapper">
+                    <button class="carrusel-btn carrusel-prev">&#10094;</button>
+
+                    <div id="sliderCategorias" class="carrusel-categorias">
+                        <!-- Categorías dinámicas se insertan aquí -->
+                    </div>
+
+                    <button class="carrusel-btn carrusel-next">&#10095;</button>
+                </div>
+            </section>
+
+            <!-- ===================== FILTROS Y ORDEN ===================== -->
+            <section class="barra-filtros" aria-label="Filtros de productos">
+                <div class="grupo-chips">
+                    <button class="chip-filtro" data-filtro="ofertas">Ofertas</button>
+                    <button class="chip-filtro" data-filtro="stock">En stock</button>
+                    <span class="texto-suave separador">Precio:</span>
+
+                    <button class="chip-filtro" data-filtro="menos50">Menos de S/ 50</button>
+                    <button class="chip-filtro" data-filtro="50a100">S/ 50 – 100</button>
+                    <button class="chip-filtro" data-filtro="mas100">Más de S/ 100</button>
+                </div>
+
+                <div class="ordenar">
+                    <label for="orden" class="texto-suave">Ordenar:</label>
+                    <select id="orden" class="selector-orden">
+                        <option>Relevancia</option>
+                        <option>Precio: menor a mayor</option>
+                        <option>Precio: mayor a menor</option>
+                        <option>Nombre A–Z</option>
+                        <option>Nombre Z–A</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- ===================== PRODUCTOS DINÁMICOS ===================== -->
+            <section class="cuadricula-productos" id="contenedorProductos"></section>
+
+            <p id="sinProductos" class="texto-suave" style="display:none;">
+                No hay productos disponibles en esta categoría.
+            </p>
+
+        </main>
+
+        <!-- SCRIPTS -->
+        <script src="js/indexProductos.js"></script>
+        <script src="js/categorias-dinamico.js"></script>
+        <script src="js/footer.js"></script>
+    </body>
+
+</html>

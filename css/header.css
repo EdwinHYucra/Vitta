@@ -1,0 +1,469 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 12 oct. 2025, 18:50:59
+    Author     : Dayanna
+*/
+
+/* ===== Header / Navegación / Menú móvil ===== */
+
+/* Barra superior */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, .75);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e8eef6;
+}
+header a,
+header a:visited,
+header a:hover,
+header a:focus {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #F77D72, #B82A1D);
+    opacity: .35;
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.marca {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.marca .logo {
+    width: 140px;
+    border-radius: 10px;
+}
+
+.marca strong {
+    font-size: 18px;
+    color: #0f172a;
+}
+
+/* CTA superiores */
+.acciones-superior {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.acciones-superior .boton,
+.acciones-superior a.boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: .85rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+    background: #ffffff;
+    color: #0f172a;
+    transition: transform .15s ease, box-shadow .15s ease,
+        background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.acciones-superior a.boton.relleno {
+    background: #EE5345;
+    color: #fff;
+    border-color: #EE5345;
+}
+
+/* Iconos redondos (hamburguesa / carrito) */
+.icono-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1px solid #e7edf5;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+    position: relative;
+    cursor: pointer;
+}
+
+.icono-boton svg {
+    width: 20px;
+    height: 20px;
+}
+
+.icono-boton:hover {
+    border-color: #FBA29A;
+}
+
+.icono-boton .contador {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    font-size: 11px;
+    line-height: 1;
+    background: #EE5345;
+    color: #fff;
+    border-radius: 999px;
+    padding: 3px 6px;
+    border: 2px solid #fff;
+}
+
+/* Cinta de categorías */
+.categorias {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    overflow: auto;
+    padding: 8px 20px;
+    scrollbar-width: none;
+}
+
+.categorias::-webkit-scrollbar {
+    display: none;
+}
+
+.ficha {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: .45rem .85rem;
+    border-radius: 999px;
+    border: 1px solid #e7edf5;
+    background: #fff;
+    color: #0f172a;
+    transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+}
+
+.ficha:hover {
+    border-color: #FBA29A;
+}
+
+.ficha.activa {
+    background: #FEE4E2;
+    border-color: #FBA29A;
+    color: #98261C;
+}
+
+/* Buscador en header */
+.buscador {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 14px;
+    flex: 1;
+    max-width: 520px;
+}
+
+.buscador input[type="search"] {
+    appearance: none;
+    border: 1px solid #d7e3ef;
+    background: #fff;
+    border-radius: 999px;
+    padding: .6rem .9rem;
+    font: inherit;
+    outline: none;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+    width: 100%;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.buscador input[type="search"]:focus-visible {
+    border-color: #F77D72;
+    box-shadow: 0 0 0 4px #FEF3F2, 0 0 0 2px #FECECA inset;
+}
+
+/* Panel móvil (CSS-only con checkbox .alternar-menu) */
+.menu-movil {
+    display: none;
+}
+
+/* botón hamburguesa */
+
+.alternar-menu {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.cortina {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+    z-index: 90;
+}
+
+.panel-movil {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(86vw, 360px);
+    background: #fff;
+    border-left: 1px solid #e7edf5;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .18);
+    transform: translateX(100%);
+    transition: transform .2s ease;
+    z-index: 100;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.lista-movil {
+    display: grid;
+    gap: 10px;
+}
+
+.filas-compactas {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.alternar-menu:checked~.cortina {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.alternar-menu:checked~.panel-movil {
+    transform: translateX(0);
+}
+
+.titulo-panel {
+    margin: 6px 0 0;
+}
+
+.buscador-movil {
+    margin: 8px 0 10px;
+    position: relative;
+}
+
+.buscador-movil input[type="search"] {
+    appearance: none;
+    border: 1px solid #d7e3ef;
+    background: #fff;
+    border-radius: 999px;
+    padding: .75rem 1rem;
+    font: inherit;
+    outline: none;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+    width: 100%;
+}
+
+.seccion-titulo {
+    font-weight: 600;
+    margin: 12px 0 8px;
+}
+
+.lista-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dropdown-categorias {
+    position: fixed;
+    top: 64px; /* justo debajo del header */
+    left: 0;
+    width: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid #e7edf5;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.12);
+    padding: 16px;
+    gap: 12px;
+    display: none;
+    flex-direction: column;
+    z-index: 45;
+    border-radius: 12px;
+}
+
+.item-sugerencia {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.item-sugerencia:hover {
+    background: #f5f5f5;
+}
+
+.dropdown-categorias .categoria h4 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.dropdown-categorias .categoria ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.dropdown-categorias .categoria ul li {
+    padding: 6px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.dropdown-categorias .categoria ul li:hover {
+    background: #FEE4E2;
+}
+
+/* Dropdown buscador (misma anchura que input) */
+.dropdown-buscador {
+    scrollbar-width: none;   
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #d7e3ef;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+    border-radius: 12px;   /* <<< YA NO ES 999px */
+    margin-top: 4px;
+    padding: 6px 0;
+    display: none;
+    z-index: 9999;
+}
+.dropdown-buscador::-webkit-scrollbar {
+    display: none;              /* Chrome, Edge, Safari */
+}
+
+
+.dropdown-buscador div {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.dropdown-buscador div:hover {
+    background: #FEE4E2;
+}
+
+/* Mostrar dropdown categorías cuando se active */
+.dropdown-categorias.activo {
+    display: flex;
+}
+
+/* Mostrar dropdown buscador cuando se active */
+.dropdown-buscador.visible {
+    display: block;
+}
+
+.dropdown-buscador .ver-mas {
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+}
+
+
+
+
+
+/* ===== Responsivo del header ===== */
+@media (max-width:900px) {
+
+    /* Muestra hamburguesa */
+    .menu-movil {
+        display: inline-flex;
+    }
+
+    /* Deja que la barra parta en dos filas si es necesario */
+    .barra {
+        /*flex-wrap: wrap;*/
+        gap: 8px;
+    }
+
+    /* Logo y texto compactos */
+    .marca strong {
+        font-size: 16px;
+    }
+
+    .marca .logo {
+        width: 120px;
+    }
+
+    /* Oculta CTA grandes (Comprar / Iniciar sesión) */
+    .acciones-superior .boton,
+    .acciones-superior a.boton {
+        display: none !important;
+    }
+
+    /* Mantén visibles los iconos (hamburguesa / carrito) */
+    .acciones-superior .icono-boton {
+        display: inline-flex;
+    }
+
+    /* Oculta buscador y cinta de categorías en el header
+     (se mostrarán dentro del panel lateral) */
+    .buscador {
+        display: none !important;
+    }
+
+    .categorias {
+        display: none !important;
+    }
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px
+}
+@media (max-width:480px) {
+    .marca .logo {
+        width: 110px;
+    }
+
+    .icono-boton {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.menu-usuario a.menu-opcion {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.menu-usuario a.menu-opcion:hover {
+    background: #f5f5f5;
+}

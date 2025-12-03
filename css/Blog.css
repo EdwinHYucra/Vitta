@@ -1,0 +1,450 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 12 oct. 2025, 16:54:36
+    Author     : Dayanna
+*/
+/* ===== ESTILO GLOBAL ===== */
+.blog-body {
+    background: #f9fafc;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* === SECCIÓN NOVEDADES === */
+.novedades {
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.novedades h2 {
+    font-size: 2.2em;
+    color: #EE5345;
+    margin-bottom: 45px;
+    font-weight: 700;
+    position: relative;
+}
+
+.novedades h2::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #EE5345;
+    border-radius: 2px;
+}
+
+/* === GRID TARJETAS === */
+.novedades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    justify-items: center;
+}
+
+/* === TARJETA === */
+.novedad {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s ease;
+    width: 100%;
+    max-width: 390px;
+}
+
+.novedad:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* === IMAGEN TARJETA === */
+.novedad-img-container {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+}
+
+.novedad-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.6s ease;
+}
+
+.novedad:hover .novedad-img-container img {
+    transform: scale(1.08);
+}
+
+/* === TEXTO TARJETA === */
+.novedad-texto {
+    padding: 20px 25px 25px 25px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.novedad-texto h3 {
+    color: #EE5345;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.novedad-texto p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+/* === BOTÓN LEER MÁS === */
+.btn-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-leer-mas {
+    display: inline-block;
+    background-color: #EE5345;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-leer-mas:hover {
+    background-color: #d94438;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* ===== OVERLAY TIPO INSTAGRAM ===== */
+.post-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 40px 20px;
+}
+
+.post-overlay:target {
+    display: flex;
+}
+
+/* Contenedor tipo Instagram */
+.post-container {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    align-items: center;      
+    max-height: 90vh;         
+}
+
+/* Imagen izquierda */
+.post-img {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;   
+    align-items: center;      
+    overflow: hidden;
+    background: #fafafa;
+    padding: 15px;
+}
+
+.post-img img {
+    max-height: 100%;           
+    max-width: 100%;
+    object-fit: contain;        
+}
+
+.post-img img:hover {
+    transform: scale(1.05);
+}
+
+/* Contenido derecho */
+.post-content {
+    flex: 1;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Cerrar overlay */
+.post-close {
+    align-self: flex-end;
+    font-size: 2rem;
+    color: #EE5345;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-close:hover {
+    color: #d94438;
+}
+
+/* Cabecera */
+.post-header h3 {
+    color: #EE5345;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.post-date {
+    color: #888;
+    font-size: 0.85em;
+}
+
+/* Descripción */
+.post-desc {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Beneficios y sabores */
+.post-highlights p {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+/* Recomendaciones / Tips */
+.recomendaciones-title {
+    text-align: center;
+    color: #EE5345;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.post-tips {
+    text-align: left;
+    margin-top: 15px;
+    color: #555;
+}
+
+.post-tips h4 {
+    color: #EE5345;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.post-tips p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+
+/* Animación */
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+    .novedad-img-container {
+        height: 210px;
+    }
+
+    .novedad-texto {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-container {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    .post-img {
+        max-height: 300px;
+    }
+
+    .post-content {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .post-header h3 {
+        font-size: 1.3em;
+    }
+
+    .novedades h2 {
+        font-size: 1.8em;
+    }
+
+    .novedad-img-container {
+        height: 190px;
+    }
+}
+
+/* ===== SECCIÓN VIDEO DESTACADO ===== */
+.video-section {
+  max-width: 1300px;
+  margin: 60px auto 80px;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.video-section > h2 {
+  font-size: 2.0em;
+  color: #EE5345;
+  margin-bottom: 28px;
+  font-weight: 700;
+  position: relative;
+}
+
+.video-section > h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #EE5345;
+  border-radius: 2px;
+}
+
+/* Tarjeta del video */
+.video-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0;
+  overflow: hidden;
+  border-top: 4px solid #EE5345; /* acento */
+}
+
+/* Contenedor del video con relación de aspecto */
+.video-media {
+  background: #fafafa;
+  position: relative;
+}
+
+/* Mantener 16:9 sin JS */
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 0;
+}
+
+/* Si necesitas soportar navegadores sin aspect-ratio */
+/* .video-media::before { content:""; display:block; padding-top:56.25%; }
+.video-frame { position:absolute; inset:0; height:100%; } */
+
+.video-content {
+  padding: 24px 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.video-content h3 {
+  color: #EE5345;
+  margin: 0 0 4px;
+  font-size: 1.35em;
+  line-height: 1.25;
+}
+
+.video-content p {
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.98em;
+}
+
+.video-highlights {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  color: #444;
+  display: grid;
+  gap: 6px;
+  font-size: 0.95em;
+}
+
+.video-cta {
+  margin-top: 10px;
+}
+
+/* Hover suave */
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .video-card {
+    grid-template-columns: 1fr;
+  }
+  .video-content {
+    padding: 20px;
+  }
+  .video-section > h2 {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 640px) {
+  .video-content h3 {
+    font-size: 1.2em;
+  }
+  .video-section {
+    padding: 0 20px;
+  }
+}

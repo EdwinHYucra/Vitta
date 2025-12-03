@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vitta - Carrito de Compras</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/carrito.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="icon" type="image/png" href="img/iconos/IconoP.png"/>
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <script src="js/header.js"></script>
+
+        <main class="cuerpo">
+
+            <h1>Mi Carrito</h1>
+
+            <section class="cart-wrapper">
+
+                <!-- ===================== COLUMNA IZQUIERDA ===================== -->
+                <div class="cart-left">
+
+                    <!-- ENCABEZADO -->
+                    <div class="cart-header">
+                        <span>Producto</span>
+                        <span>Cantidad</span>
+                        <span>Precio</span>
+                        <span>Total</span>
+                        <span></span> <!-- columna del basurero -->
+                    </div>
+
+                    <!-- LISTA DE PRODUCTOS -->
+                    <div class="cart-container" id="listaCarrito"></div>
+
+                </div>
+
+                <!-- ===================== RESUMEN ===================== -->
+                <aside class="summary" id="resumenCompra">
+
+                    <h2>Resumen de la Compra</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotalTexto">S/ 0.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <span id="envioTexto">S/ 0.00</span>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="totalTexto">S/ 0.00</span>
+                    </div>
+
+                    <button class="btn" onclick="window.location.href = 'Categorias.html'">
+                        Seguir comprando
+                    </button>
+
+                    <button class="btn" id="btnActualizar">
+                        Actualizar compra
+                    </button>
+
+                    <button class="btn primario" id="btnContinuar">
+                        Continuar compra
+                    </button>
+
+                </aside>
+
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <script src="js/footer.js"></script>
+
+        <!-- ===================== MODAL LOGIN ===================== -->
+        <div class="modal-overlay" id="modalLogin">
+            <div class="modal-box">
+                <h3>Debes iniciar sesión</h3>
+                <p>Para continuar con la compra, debes iniciar sesión en tu cuenta.</p>
+
+                <div class="modal-buttons">
+                    <button class="btn-cancel" id="btnCancelarModal">Cancelar</button>
+                    <button class="btn-login" id="btnIrLogin">Iniciar sesión</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== MODAL ELIMINAR PRODUCTO ===================== -->
+        <div class="modal-overlay" id="modalEliminar">
+            <div class="modal-box">
+                <h3>¿Eliminar producto?</h3>
+                <p>Esta acción no se puede deshacer.</p>
+
+                <div class="modal-buttons">
+                    <button class="btn-cancel" id="btnNoEliminar">Cancelar</button>
+                    <button class="btn-login" id="btnSiEliminar">Eliminar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- JS DEL CARRITO -->
+        <script src="js/carrito.js"></script>
+
+    </body>
+</html>

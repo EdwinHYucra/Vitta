@@ -1,0 +1,532 @@
+/* ============================================================
+   PÁGINA PERFIL — BASE GENERAL
+=============================================================== */
+
+.perfil-page {
+    background: #f8fafc;
+    margin: 0;
+    font-family: "Poppins", system-ui, sans-serif;
+}
+
+.perfil-wrapper {
+    padding: 32px 0 56px;
+}
+
+.perfil-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* ============================================================
+   MENÚ LATERAL
+=============================================================== */
+
+.perfil-menu {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(15,23,42,0.12);
+    padding: 18px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-menu-titulo {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 22px 10px;
+    margin: 0 0 4px;
+    color: #0f172a;
+}
+
+.perfil-menu-item {
+    border: none;
+    background: transparent;
+    padding: 12px 22px;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+    color: #111827;
+    transition: 0.15s ease;
+}
+
+.perfil-menu-item:hover {
+    background: #f9fafb;
+}
+
+.perfil-menu-item.activo {
+    background: #FEE4E2;
+    color: #B82A1D;
+    font-weight: 500;
+}
+
+.perfil-menu-item.salir {
+    margin-top: auto;
+    color: #b91c1c;
+}
+
+/* ============================================================
+   PANEL DERECHO
+=============================================================== */
+
+.perfil-paneles {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(15,23,42,0.12);
+    padding: 24px 24px 30px;
+    min-height: 420px;
+}
+
+.perfil-titulo {
+    font-size: 24px;
+    margin: 0 0 18px;
+    color: #0f172a;
+}
+
+.perfil-seccion {
+    display: none;
+}
+
+.perfil-seccion.activa {
+    display: block;
+}
+
+/* ============================================================
+   DATOS PERSONALES
+=============================================================== */
+
+.lista-datos {
+    display: flex;
+    flex-direction: column;
+}
+
+.fila-dato {
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.valor-dato {
+    color: #374151;
+}
+
+.valor-secundario {
+    color: #6b7280;
+}
+
+.dni-linea {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* ============================================================
+   BOTONES EDITAR (Diseño bonito)
+=============================================================== */
+
+.link-accion {
+    border: none;
+    background: transparent;
+    color: #EE5345;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.link-accion:hover {
+    background: #feeceb;
+}
+
+.fila-dato button {
+    white-space: nowrap;
+}
+
+/* ============================================================
+   TARJETAS DE DIRECCIONES
+=============================================================== */
+
+.lista-direcciones {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tarjeta-direccion {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 22px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    transition: 0.2s ease;
+}
+
+.tarjeta-direccion:hover {
+    transform: scale(1.01);
+}
+
+.dir-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dir-nombre {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111;
+}
+
+.badge-principal {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.dir-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-editar-dir {
+    color: #ff5b4d;
+}
+
+.btn-eliminar-dir {
+    color: #777;
+}
+
+.btn-eliminar-dir:hover {
+    color: #d00;
+}
+
+.dir-linea {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #333;
+}
+
+.dir-linea-sec {
+    margin-top: 3px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ============================================================
+   BOTÓN AGREGAR DIRECCIÓN
+=============================================================== */
+
+.btn-primario {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #EE5345;
+    color: white;
+    box-shadow: 0 10px 30px rgba(238, 83, 69, 0.25);
+}
+
+.btn-primario:hover {
+    filter: brightness(0.94);
+}
+
+.acciones-direcciones {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+}
+
+/* ============================================================
+   PANEL DESLIZANTE
+=============================================================== */
+
+.overlay-edicion {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,0.45);
+    display: none;
+    justify-content: flex-end;
+    z-index: 999;
+}
+
+.overlay-edicion.visible {
+    display: flex;
+}
+
+.panel-edicion {
+    width: 420px;
+    background: white;
+    height: 100%;
+    border-radius: 12px 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn .25s ease;
+    padding: 24px;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(60px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+.panel-edicion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 18px;
+}
+
+.btn-cerrar-panel {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+}
+
+/* FORMULARIO (Vertical, bonito) */
+
+.form-edicion {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-form input,
+.campo-form select {
+    width: 100%;
+    padding: 9px 11px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+.checkbox-linea {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-linea input {
+    width: 18px;
+    height: 18px;
+    accent-color: #EE5345;
+}
+
+/* BOTONES DEL PANEL */
+
+.panel-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-secundario {
+    background: #f3f4f6;
+    color: #374151;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.btn-secundario:hover {
+    background: #e5e7eb;
+}
+
+/* ============================================================
+   CONFIGURACIÓN – CAMBIAR CONTRASEÑA
+=============================================================== */
+
+.tarjeta-config {
+    background: #ffffff00;   /* SIN CUADRO ENCIMA */
+    padding: 0;
+}
+
+.form-config {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.campo-pass label {
+    margin-bottom: 4px;
+}
+
+.campo-pass input {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+
+.campo-pass input:focus {
+    border-color: #EE5345;
+    box-shadow: 0 0 0 3px #ffe0dc;
+}
+
+.acciones-config {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.acciones-config .btn-primario {
+    padding: 12px 26px;
+    border-radius: 12px;
+}
+
+/* ============================================================
+   RESPONSIVE
+=============================================================== */
+
+@media (max-width: 960px) {
+    .perfil-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil-menu {
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: auto;
+    }
+
+    .perfil-menu-titulo {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .panel-edicion {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+/* ================== BOTONES EDITAR / ELIMINAR (ESTILO BONITO) ================== */
+
+.dir-acciones {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Estilo general de los botones Editar / Eliminar */
+.dir-acciones .btn-editar-dir,
+.dir-acciones .btn-eliminar-dir {
+    border: none;
+    background: #fff;
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: 0.2s ease;
+    font-weight: 500;
+}
+
+/* Botón EDITAR (rojo Vitta) */
+.dir-acciones .btn-editar-dir {
+    color: #EE5345;
+    border: 1px solid #ffc9c4;
+}
+
+.dir-acciones .btn-editar-dir:hover {
+    background: #ffe7e5;
+    box-shadow: 0 4px 10px rgba(238, 83, 69, 0.25);
+}
+
+/* Botón ELIMINAR (gris elegante) */
+.dir-acciones .btn-eliminar-dir {
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.dir-acciones .btn-eliminar-dir:hover {
+    background: #f3f4f6;
+}
+/* === ESTILO REAL DE LOS BOTONES DE EDITAR Y ELIMINAR === */
+
+.btn-editar-dir,
+.btn-eliminar-dir {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+/* EDITAR — color naranja */
+.btn-editar-dir {
+    color: #EE5345 !important;
+    border-color: #FBC5BF !important;
+    background: #FFF7F6 !important;
+}
+
+.btn-editar-dir:hover {
+    background: #EE5345 !important;
+    color: white !important;
+}
+
+/* ELIMINAR — gris */
+.btn-eliminar-dir {
+    color: #6B7280 !important;
+    border-color: #D1D5DB !important;
+    background: #F9FAFB !important;
+}
+
+.btn-eliminar-dir:hover {
+    background: #E5E7EB !important;
+}
+
+/* ——— HACER MÁS CORTOS LOS INPUTS DE CONFIGURACIÓN ——— */
+#seccion-configuracion .campo-form input {
+    width: 60%;            /* AJUSTA EL TAMAÑO → 60% del panel */
+    min-width: 260px;      /* Para que no se haga muy pequeño */
+}
+
+/* Contenedor del input + ojito */
+.input-pass {
+    position: relative;
+    width: 100%;
+}
+
+/* El input */
+.input-pass input {
+    width: 100%;
+    padding: 10px 40px 10px 12px; /* espacio para el ojito */
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Ojito */
+.toggle-pass {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+    user-select: none;
+}
+
+.toggle-pass:hover {
+    color: #EE5345;
+}

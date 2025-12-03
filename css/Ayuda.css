@@ -1,0 +1,186 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 1 oct. 2025, 20:05:32
+    Author     : Dayanna
+*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* === SECCIÓN DE AYUDA === */
+.ayuda {
+    width: 85%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    color: #EE5345;
+    padding: 15px 0;
+    margin: 0;
+    border-bottom: 2px solid #EE5345;
+}
+
+/* === ACORDEÓN === */
+details {
+    border-bottom: 1px solid #ddd;
+}
+
+summary {
+    cursor: pointer;
+    padding: 18px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #EE5345;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    transition: background 0.3s;
+}
+
+summary:hover {
+    background-color: #ececec;
+}
+
+/* Flecha personalizada */
+summary::after {
+    content: url("../img/FlechaAyuda.svg");
+    transition: transform 0.3s;
+}
+
+/* Rotar flecha al abrir */
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* Contenido del acordeón */
+details p {
+    padding: 0 20px 15px 20px;
+    margin: 0;
+    background-color: white;
+    line-height: 1.6;
+}
+
+/* === SUCURSALES === */
+.sucursales {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 25px;
+}
+
+.sucursales h2 {
+    text-align: center;
+    color: #EE5345;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #EE5345;
+    padding-bottom: 10px;
+}
+
+.sucursal {
+    margin-bottom: 35px;
+}
+
+.sucursal h3 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+/* === MAPAS === */
+.mapas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.mapa-item {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.mapa-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.mapa-item .direccion {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: #EE5345; /* color principal */
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.mapa-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.15); /* sombra gris bajita */
+}
+
+.mapas iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .header-ayuda {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .ayuda, .sucursales {
+        width: 95%;
+        padding: 20px;
+    }
+
+    summary {
+        font-size: 1em;
+        padding: 15px;
+    }
+
+    .mapas iframe {
+        height: 200px;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vitta - Historial de Pedidos</title>
+
+        <link rel="stylesheet" href="css/HistorialPedidos.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="icon" type="image/png" href="img/iconos/IconoP.png" />
+    </head>
+
+    <body>
+
+        <script src="js/header.js"></script>
+
+        <h1>Historial de Pedidos</h1>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Fecha</th>
+                        <th>Método de Pago</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaPedidos"></tbody>
+            </table>
+        </div>
+
+        <!-- Modal Dinámico -->
+        <div id="modalBoucher" class="modal">
+            <div class="modal-content">
+                <div id="ticketContenido"></div>
+                <a href="#" class="close-btn" onclick="cerrarModal()">Cerrar</a>
+            </div>
+        </div>
+
+        <div id="modalDetalle" class="modal">
+            <div class="modal-contenido" id="detalleContenido"></div>
+        </div>
+
+        <script src="js/HistorialPedidos.js"></script>
+        <script src="js/footer.js"></script>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="img/iconos/IconoP.png" />
+    <title>Producto – Canasta de Abarrotes</title>
+    <link rel="stylesheet" href="css/producto.css" />
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <script src="js/header.js"></script>
+    <main class="contenedor">
+
+        <!-- Migas -->
+        <nav class="migas" aria-label="Ruta de navegación">
+            <a href="index.html">Inicio</a> ›
+            <a href="categorias.html">Categorías</a> ›
+            <span id="migaCategoria">...</span>
+        </nav>
+
+        <!-- PDP -->
+        <section class="pdp" aria-label="Detalle del producto">
+            <div class="pdp-cuadricula">
+
+                <!-- Galería -->
+                <div class="galeria">
+                    <div class="galeria-vista" id="galeriaVista"></div>
+                    <div class="galeria-miniaturas" id="galeriaMiniaturas"></div>
+                </div>
+
+                <!-- Información -->
+                <div class="info-producto">
+
+                    <div class="distintivos">
+                        <span class="distintivo">En stock</span>
+                    </div>
+
+                    <h1 class="titulo-producto" id="productoNombre"></h1>
+
+                    <p class="precio-destacado">
+                        <strong>S/ <span id="productoPrecio"></span></strong>
+                    </p>
+
+                    <p class="descripcion-corta" id="descripcionBreve"></p>
+
+                    <div class="acciones">
+                        <div class="selector-cantidad">
+                            <label class="etiqueta-cantidad" for="cantidad">Cant.</label>
+                            <input class="campo-cantidad" id="cantidad" type="number" value="1" min="1">
+                        </div>
+                        <button class="boton boton-primario" id="btnAgregarCarrito">Agregar al carrito</button>
+                    </div>
+
+                    <div class="datos-resumen">
+                        <div class="dato">🚚 Envío a domicilio</div>
+                        <div class="dato">🕒 Llega en 24–48h</div>
+                        <div class="dato">💳 Yape / Plin / Tarjetas</div>
+                    </div>
+
+                    <div class="acordeones">
+                        <details class="acordeon" open>
+                            <summary class="acordeon-cabecera">Detalles</summary>
+                            <div class="acordeon-contenido" id="descripcionDetalles"></div>
+                        </details>
+                        <details class="acordeon">
+                            <summary class="acordeon-cabecera">Política de envíos y devoluciones</summary>
+                            <div class="acordeon-contenido">
+                                Envíos a todo Arequipa. Cambios y devoluciones dentro de los 7 días si el producto
+                                presenta fallas o llega dañado.
+                            </div>
+                        </details>
+
+                        <!-- Preguntas frecuentes -->
+                        <details class="acordeon">
+                            <summary class="acordeon-cabecera">Preguntas frecuentes</summary>
+                            <div class="acordeon-contenido">
+
+                                <p><strong>¿Incluye garantía?</strong>
+                                    Sí, 7 días desde la recepción.</p>
+
+                                <p><strong>¿Puedo pagar con Yape/Plin?</strong>
+                                    Sí, además aceptamos tarjetas y transferencia.</p>
+
+                            </div>
+                        </details>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Relacionados -->
+        <section class="relacionados">
+            <h2 class="relacionados-titulo">Productos relacionados</h2>
+            <div class="relacionados-cuadricula" id="productosRelacionados"></div>
+        </section>
+
+    </main>
+
+    <script src="js/productosBase.js"></script>
+    <script src="js/iniciarProductos.js"></script>
+    <script src="js/detalleProducto.js"></script>
+
+
+
+    <script src="js/footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog - Novedades de Alimentos</title>
+        <link rel="stylesheet" href="css/Blog.css">
+        <link rel="icon" type="image/png" href="img/iconos/IconoP.png"/>
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+    </head>
+    <body class="blog-body">
+        <script src="js/header.js"></script>
+        <main>
+            <section class="video-section" aria-labelledby="video-destacado-title">
+                <h2 id="video-destacado-title">Video destacado</h2>
+
+                <article class="video-card">
+                    <div class="video-media">
+                        <!-- Reemplaza el src por tu URL de YouTube/Vimeo o un MP4 local -->
+                        <video
+                            class="video-frame"
+                            src="videos/Promo.mp4"
+                            poster="img/posters/promo-vitta.jpg"
+                            controls
+                            autoplay
+                            muted
+                            preload="metadata"
+                            playsinline
+                            >
+                            <!-- Fuentes alternativas (opcional pero recomendado) -->
+                            <source src="videos/Promo.webm" type="video/webm">
+                            <source src="videos/Promo.mp4" type="video/mp4">
+                            <!-- Subtítulos (opcional) -->
+                            <track kind="captions" src="videos/promo.es.vtt" srclang="es" label="Español">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+                    </div>
+
+                    <div class="video-content">
+                        <h3>Novedades Vitta — Temporada Primavera</h3>
+                        <p>
+                            Conoce nuestros nuevos yogures, cereales integrales y snacks saludables.
+                            En este video te contamos tips de conservación y cómo combinarlos en tus desayunos.
+                        </p>
+
+                        <ul class="video-highlights">
+                            <li>Recetas rápidas con 3 ingredientes</li>
+                            <li>Comparativa de azúcares y porciones</li>
+                            <li>Consejos de almacenamiento en casa</li>
+                        </ul>
+
+                        <div class="video-cta">
+                            <a class="btn-leer-mas" href="Categorias.html">Ver productos</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="novedades">
+                <h2>Novedades y Nuevos Productos</h2>
+                <div class="novedades-grid">
+                    <!-- Yougures -->
+                    <article class="novedad">
+                        <div class="novedad-img-container">
+                            <img src="img/Productos/lacteos/YougurtNatural.png" alt="Yogures Naturales">
+                        </div>
+                        <div class="novedad-texto">
+                            <h3>¡Llegaron los nuevos yogures naturales!</h3>
+                            <p>Disfruta el auténtico sabor natural con nuestra nueva línea de yogures hechos con leche fresca y cultivos vivos. Perfectos para tus desayunos, meriendas o postres saludables.</p>
+                            <div class="btn-container">
+                                <a href="#post1" class="btn-leer-mas">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="post-overlay" id="post1">
+                        <div class="post-container">
+                            <!-- Imagen a la izquierda -->
+                            <div class="post-img">
+                                <img src="img/Productos/lacteos/YougurtNatural.png" alt="Yogures Naturales">
+                            </div>
+
+                            <!-- Contenido a la derecha -->
+                            <div class="post-content">
+                                <!-- Botón cerrar -->
+                                <a href="#" class="post-close">&times;</a>
+
+                                <!-- Cabecera -->
+                                <div class="post-header">
+                                    <h3>¡Llegaron los nuevos yogures naturales!</h3>
+                                    <span class="post-date">Publicado el 14 de octubre de 2025</span>
+                                </div>
+
+                                <!-- Sección destacada -->
+                                <div class="post-desc">
+                                    Descubre el auténtico sabor natural con nuestra nueva línea de yogures hechos con leche fresca y cultivos vivos. Perfectos para tus desayunos, meriendas o postres saludables.
+                                </div>
+
+                                <!-- Beneficios y sabores -->
+                                <div class="post-highlights">
+                                    <p><strong>Beneficios:</strong> Sin preservantes, sin colorantes y llenos de probióticos que cuidan tu salud intestinal.</p>
+                                    <p><strong>Sabores disponibles:</strong> Natural, Fresa, Durazno, Mango</p>
+                                </div>
+
+                                <!-- Recomendaciones en cards pequeñas -->
+                                <div class="post-tips">
+                                    <h4 class="recomendaciones-title">Recomendaciones:</h4>
+                                    <p>Combínalos con tu cereal favorito o granola para un desayuno energético.</p>
+                                    <p>Úsalos en smoothies o bowls de frutas para un snack saludable.</p>
+                                    <p>Ideal para toda la familia: niños, jóvenes y adultos.</p>
+                                    <p>Tip especial: Mantén tu yogur en la parte más fría del refrigerador y consúmelo dentro de los 7 días posteriores a su apertura para disfrutar su frescura al máximo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEREALES -->
+                    <article class="novedad">
+                        <div class="novedad-img-container">
+                            <img src="img/Productos/granos_y_harina/CerealesNaturales.png" alt="Cereales integrales">
+                        </div>
+                        <div class="novedad-texto">
+                            <h3>Nueva línea de cereales integrales</h3>
+                            <p>Inicia tus mañanas con energía y fibra natural. Elaborados con avena, quinua y chía.</p>
+                            <div class="btn-container">
+                                <a href="#post2" class="btn-leer-mas">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="post-overlay" id="post2">
+                        <div class="post-container">
+                            <!-- Imagen a la izquierda -->
+                            <div class="post-img">
+                                <img src="img/Productos/granos_y_harina/CerealesNaturales.png" alt="Cereales integrales">
+                            </div>
+
+                            <!-- Contenido a la derecha -->
+                            <div class="post-content">
+                                <a href="#" class="post-close">&times;</a>
+                                <div class="post-header">
+                                    <h3>Nueva línea de cereales integrales</h3>
+                                    <span class="post-date">Publicado el 14 de octubre de 2025</span>
+                                </div>
+
+                                <div class="post-desc">
+                                    Inicia tus mañanas con energía y fibra natural. Elaborados con avena, quinua y chía, ideales para mantener una alimentación equilibrada.
+                                </div>
+
+                                <div class="post-highlights">
+                                    <p><strong>Beneficios:</strong> Fuente de energía, alta en fibra y sin azúcares refinados.</p>
+                                    <p><strong>Presentaciones:</strong> Miel, cacao y sin azúcar.</p>
+                                </div>
+
+                                <div class="post-tips">
+                                    <h4 class="recomendaciones-title">Recomendaciones:</h4>
+                                    <p>Combínalos con yogur o frutas frescas para un desayuno completo.</p>
+                                    <p>Perfectos para llevar al trabajo o la universidad.</p>
+                                    <p>Guárdalos en un frasco hermético para mantener su crocancia.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- SNACKS -->
+                    <article class="novedad">
+                        <div class="novedad-img-container">
+                            <img src="img/Productos/granos_y_harina/SnacksSaludables.png" alt="Snacks saludables">
+                        </div>
+                        <div class="novedad-texto">
+                            <h3>Descubre nuestros snacks saludables</h3>
+                            <p>La mejor forma de picar sin culpas. Chips de camote, mix de frutos secos y barras de avena.</p>
+                            <div class="btn-container">
+                                <a href="#post3" class="btn-leer-mas">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="post-overlay" id="post3">
+                        <div class="post-container">
+                            <div class="post-img">
+                                <img src="img/Productos/granos_y_harina/SnacksSaludables.png" alt="Snacks saludables">
+                            </div>
+
+                            <div class="post-content">
+                                <a href="#" class="post-close">&times;</a>
+                                <div class="post-header">
+                                    <h3>Descubre nuestros snacks saludables</h3>
+                                    <span class="post-date">Publicado el 14 de octubre de 2025</span>
+                                </div>
+
+                                <div class="post-desc">
+                                    Chips de camote, mix de frutos secos y barras de avena con miel. Hechos con ingredientes naturales y sin frituras.
+                                </div>
+
+                                <div class="post-highlights">
+                                    <p><strong>Beneficios:</strong> Nutritivos, energéticos y fáciles de llevar.</p>
+                                    <p><strong>Variedades:</strong> Chips de camote, mix andino y barras de avena.</p>
+                                </div>
+
+                                <div class="post-tips">
+                                    <h4 class="recomendaciones-title">Recomendaciones:</h4>
+                                    <p>Ideales para la oficina, el gimnasio o como snack post-entrenamiento.</p>
+                                    <p>Acompáñalos con jugos o bebidas naturales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- BEBIDAS -->
+                    <article class="novedad">
+                        <div class="novedad-img-container">
+                            <img src="img/Productos/bebidas/BebidasNaturales.jpg" alt="Bebidas naturales">
+                        </div>
+                        <div class="novedad-texto">
+                            <h3>Bebidas naturales y refrescantes</h3>
+                            <p>Bebidas a base de frutas seleccionadas, ricas en vitaminas y sin azúcares añadidos.</p>
+                            <div class="btn-container">
+                                <a href="#post4" class="btn-leer-mas">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="post-overlay" id="post4">
+                        <div class="post-container">
+                            <div class="post-img">
+                                <img src="img/Productos/bebidas/BebidasNaturales.jpg" alt="Bebidas naturales">
+                            </div>
+
+                            <div class="post-content">
+                                <a href="#" class="post-close">&times;</a>
+                                <div class="post-header">
+                                    <h3>Bebidas naturales y refrescantes</h3>
+                                    <span class="post-date">Publicado el 14 de octubre de 2025</span>
+                                </div>
+
+                                <div class="post-desc">
+                                    Bebidas naturales elaboradas con frutas seleccionadas, ricas en vitaminas y minerales, sin conservantes ni azúcares añadidos.
+                                </div>
+
+                                <div class="post-highlights">
+                                    <p><strong>Sabores:</strong> Maracuyá, piña, frutos rojos y naranja.</p>
+                                    <p><strong>Beneficios:</strong> Hidratantes, revitalizantes y 100% naturales.</p>
+                                </div>
+
+                                <div class="post-tips">
+                                    <h4 class="recomendaciones-title">Recomendaciones:</h4>
+                                    <p>Servir bien frías para resaltar su sabor.</p>
+                                    <p>Agita antes de consumir para mezclar los jugos naturales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- GALLETAS -->
+                    <article class="novedad">
+                        <div class="novedad-img-container">
+                            <img src="img/Productos/granos_y_harina/GalletasArtesanales.png" alt="Galletas artesanales">
+                        </div>
+                        <div class="novedad-texto">
+                            <h3>Galletas artesanales recién horneadas</h3>
+                            <p>Galletas de avena, coco y chips de chocolate, elaboradas sin conservantes.</p>
+                            <div class="btn-container">
+                                <a href="#post5" class="btn-leer-mas">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="post-overlay" id="post5">
+                        <div class="post-container">
+                            <div class="post-img">
+                                <img src="img/Productos/granos_y_harina/GalletasArtesanales.png" alt="Galletas artesanales">
+                            </div>
+
+                            <div class="post-content">
+                                <a href="#" class="post-close">&times;</a>
+                                <div class="post-header">
+                                    <h3>Galletas artesanales recién horneadas</h3>
+                                    <span class="post-date">Publicado el 14 de octubre de 2025</span>
+                                </div>
+
+                                <div class="post-desc">
+                                    Elaboradas con ingredientes naturales como avena, coco y chips de chocolate. Sin conservantes ni colorantes.
+                                </div>
+
+                                <div class="post-highlights">
+                                    <p><strong>Hechas en:</strong> Nuestro taller local con recetas tradicionales.</p>
+                                    <p><strong>Beneficios:</strong> Textura crujiente, sabor casero y energía natural.</p>
+                                </div>
+
+                                <div class="post-tips">
+                                    <h4 class="recomendaciones-title">Recomendaciones:</h4>
+                                    <p>Acompáñalas con café, leche o infusiones.</p>
+                                    <p>Guárdalas en un frasco hermético para mantener su frescura.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- MERMELADAS -->
+                    <article class="novedad">
+                        <div class="novedad-img-container">
+                            <img src="img/Productos/frutas_y_verduras/MermeladasNaturales.png" alt="Mermeladas naturales">
+                        </div>
+                        <div class="novedad-texto">
+                            <h3>Mermeladas 100% naturales</h3>
+                            <p>Hechas con fruta fresca y endulzadas con stevia. Acompaña tu pan o yogur de forma saludable.</p>
+                            <div class="btn-container">
+                                <a href="#post6" class="btn-leer-mas">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="post-overlay" id="post6">
+                        <div class="post-container">
+                            <div class="post-img">
+                                <img src="img/Productos/frutas_y_verduras/MermeladasNaturales.png" alt="Mermeladas naturales">
+                            </div>
+
+                            <div class="post-content">
+                                <a href="#" class="post-close">&times;</a>
+                                <div class="post-header">
+                                    <h3>Mermeladas 100% naturales</h3>
+                                    <span class="post-date">Publicado el 14 de octubre de 2025</span>
+                                </div>
+
+                                <div class="post-desc">
+                                    Mermeladas artesanales hechas con fruta fresca y endulzadas con stevia. Acompaña tu pan o yogur de forma saludable.
+                                </div>
+
+                                <div class="post-highlights">
+                                    <p><strong>Sabores:</strong> Fresa, arándano, durazno y mora.</p>
+                                    <p><strong>Beneficios:</strong> Fuente natural de antioxidantes y sin azúcar refinada.</p>
+                                </div>
+
+                                <div class="post-tips">
+                                    <h4 class="recomendaciones-title">Recomendaciones:</h4>
+                                    <p>Úsalas para rellenar postres o acompañar quesos suaves.</p>
+                                    <p>Refrigera después de abrir y consume antes de 10 días.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </section>
+        </main>    
+        <script src="js/footer.js"></script>
+    </body>
+</html>

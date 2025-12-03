@@ -1,0 +1,348 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 12 oct. 2025, 18:52:02
+    Author     : Dayanna
+*/
+/* Paleta de colores */
+/* Primario: #EE5345; Primario oscuro: #B82A1D;
+   Texto: #0f172a; Texto suave: #5b647a; Borde: #e8eef6; Fondo: #ffffff */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+a {
+    color: #EE5345;
+    text-decoration: none;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Migas */
+.migas {
+    font-size: 14px;
+    color: #5b647a;
+    padding: 12px 0;
+}
+
+.migas a {
+    color: inherit;
+}
+
+/* PDP */
+.pdp {
+    padding: 20px 0 46px;
+}
+
+.pdp-cuadricula {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 24px;
+}
+
+@media (max-width: 900px) {
+    .pdp-cuadricula {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Galería */
+.galeria {
+    background: #ffffff;
+    border: 1px solid #e8eef6;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+    padding: 12px;
+}
+
+.galeria-vista {
+    position: relative;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    background: #eef2f6;
+    overflow: hidden;
+}
+
+.galeria-imagen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.galeria-miniaturas {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.galeria-miniaturas::-webkit-scrollbar {
+    display: none;
+}
+
+.miniatura {
+    flex: 0 0 72px;
+    height: 72px;
+    border-radius: 10px;
+    border: 1px solid #e8eef6;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Radios invisibles */
+.galeria-radio {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Mostrar imagen según radio */
+#foto-1:checked~.galeria-vista .vista-1 {
+    display: block;
+}
+
+#foto-2:checked~.galeria-vista .vista-2 {
+    display: block;
+}
+
+#foto-3:checked~.galeria-vista .vista-3 {
+    display: block;
+}
+
+/* Info derecha */
+.titulo-producto {
+    margin: .2em 0;
+    font-size: clamp(22px, 3.2vw, 32px);
+}
+
+.precio-destacado {
+    font-size: 28px;
+    margin: 6px 0 8px;
+}
+
+.descripcion-corta {
+    color: #5b647a;
+}
+
+.distintivos {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.distintivo {
+    font-size: 12px;
+    padding: .18rem .55rem;
+    border-radius: 999px;
+    background: #FEE4E2;
+    border: 1px solid #FECECA;
+    color: #98261C;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 12px 0;
+    flex-wrap: wrap;
+}
+
+.selector-cantidad {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #e8eef6;
+    border-radius: 999px;
+    padding: 6px;
+}
+
+.etiqueta-cantidad {
+    padding-left: 8px;
+    color: #5b647a;
+}
+
+.campo-cantidad {
+    width: 64px;
+    border: 0;
+    outline: none;
+    text-align: center;
+    font: inherit;
+    background: transparent;
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: .9rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+    background: #ffffff;
+    color: #0f172a;
+}
+
+.boton-primario {
+    background: #EE5345;
+    color: #ffffff;
+    border-color: #EE5345;
+}
+
+.boton-secundario {
+    color: #EE5345;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(#ffffff, #ffffff) padding-box,
+        linear-gradient(135deg, #F77D72, #B82A1D) border-box;
+}
+
+/* Datos rápidos */
+.datos-resumen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+}
+
+@media (max-width: 900px) {
+    .datos-resumen {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dato {
+    background: #ffffff;
+    border: 1px solid #e8eef6;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    color: #0f172a;
+}
+
+/* Acordeones */
+.acordeon {
+    border: 1px solid #e8eef6;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.acordeon-cabecera {
+    padding: 12px 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.acordeon-contenido {
+    padding: 0 14px 14px;
+    color: #5b647a;
+}
+
+/* Relacionados */
+.relacionados {
+    margin: 10px 0 0;
+    padding: 18px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #FEF3F2, transparent);
+}
+
+.relacionados-titulo {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.relacionados-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 1100px) {
+    .relacionados-cuadricula {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .relacionados-cuadricula {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.relacionado {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e8eef6;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.relacionado-foto {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f3f6fb;
+}
+
+.relacionado-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.relacionado-titulo {
+    margin: 12px 0 6px;
+    font-size: 16px;
+}
+
+.relacionado-antes {
+    margin: 0;
+    color: #98a2b3;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+.relacionado-ahora {
+    margin: 2px 0 0;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.relacionado-oferta {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 12px;
+    padding: .2rem .55rem;
+    border-radius: 999px;
+    background: #B82A1D;
+    color: #ffffff;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="img/iconos/IconoP.png" />
+    <title>Vitta - Mercado Online</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <script src="js/productosBase.js"></script>
+    <script src="js/iniciarProductos.js"></script>
+
+
+    <!-- Portada -->
+    <section class="portada">
+        <div class="fondo" style="background-image:url('frame_01.jpg');"></div>
+        <div class="contenido contenedor">
+            <span class="etiqueta" style="background:#fff;color:#EE5345;border-color:#d6eef2">Nuevo</span>
+            <h1>Vitta</h1>
+            <p>Vitta – Tu mercado de cada día, con el cariño de siempre.</p>
+            <div class="llamadas">
+                <a class="boton primario" href="categorias.html">Comprar ahora</a>
+                <a class="boton alterno" href="#">Ver detalles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios destacados -->
+    <section class="franja">
+        <div class="contenedor servicios">
+            <div class="rejilla-servicios">
+                <article class="servicio">
+                    <div class="icono">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18v-1a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v1" />
+                            <circle cx="8" cy="8" r="4" />
+                            <path d="M21 20v-2a4 4 0 0 0-3-3h-3" />
+                            <circle cx="17" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Servicio al cliente</h4>
+                        <p>Soporte por WhatsApp y teléfono 24/7.</p>
+                    </div>
+                </article>
+
+                <article class="servicio">
+                    <div class="icono">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A 2 2 0 0 0 21 16z" />
+                            <path d="M3.3 7L12 12l8.7-5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Envíos</h4>
+                        <p>Despachos a toda Arequipa.</p>
+                    </div>
+                </article>
+
+                <article class="servicio">
+                    <div class="icono">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v5" />
+                            <path d="M5 22l14-8-7-4-7 4 3 1.7V22" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Mejores ofertas</h4>
+                        <p>Promos y combos semanales.</p>
+                    </div>
+                </article>
+
+                <article class="servicio">
+                    <div class="icono">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <path d="M2 10h20" />
+                            <path d="M18 15l2-2" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Pagos seguros</h4>
+                        <p>Tarjetas, Yape, Plin y transferencia.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos" class="contenedor rejilla">
+        <h2>Productos destacados</h2>
+
+        <div class="tarjetas" id="contenedorProductos">
+
+        </div>
+
+        <p id="sinResultados">No se encontraron productos para tu búsqueda.</p>
+    </section>
+
+    <section class="contenedor" style="padding: 0 0 46px">
+        <div class="llamado">
+            <div>
+                <h3 style="margin:0 0 6px">Promoción destacada</h3>
+                <p style="margin:0;opacity:.9">Texto de oferta o llamada que aparezca en el video (envíos, combos, 2x1,
+                    etc.).</p>
+            </div>
+            <div class="acciones">
+                <a class="boton primario" href="Categorias.html">Aprovechar oferta</a>
+                <a class="boton primario" href="terminos-y-condiciones.html">Términos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promociones destacadas -->
+    <section class="contenedor rejilla-promos">
+        <div class="promociones">
+            <article class="tarjeta-promo">
+                <div class="fondo" style="background-image:url('img/Fondos/Canasta2.svg')"></div>
+                <div class="contenido">
+                    <div>
+                        <span class="insignia">¡-30% Hoy!</span>
+                        <h3>Canasta de Abarrotes</h3>
+                        <p>Arroz · fideos · azúcar · aceite · stock limitado</p>
+                    </div>
+                    <div class="acciones"><a class="boton primario" href="#">Ver combo</a></div>
+                </div>
+            </article>
+
+            <article class="tarjeta-promo">
+                <div class="fondo" style="background-image:url('img/Fondos/bebidas_promo.webp')"></div>
+                <div class="contenido">
+                    <div>
+                        <span class="insignia">2x1</span>
+                        <h3>Bebidas y jugos</h3>
+                        <p>Llévate 2 y paga 1 en marcas seleccionadas</p>
+                    </div>
+                    <div class="acciones"><a class="boton primario" href="#">Comprar ahora</a></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <script src="js/indexProductos.js"></script> <!-- NUEVO -->
+    <script src="JS/index-usuario.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vitta - Finalizar la compra</title>
+
+        <link rel="stylesheet" href="css/DatosYPagos.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="icon" type="image/png" href="img/iconos/IconoP.png"/>
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <script src="js/header.js"></script>
+
+        <main class="cuerpo">
+            <h1 class="titulo-pagina">Finalizar Compra</h1>
+
+            <section class="checkout-wrapper">
+
+                <!-- ======================================================= -->
+                <!-- IZQUIERDA -->
+                <!-- ======================================================= -->
+                <div class="checkout-card">
+
+                    <h2 class="subtitulo">Datos del Cliente</h2>
+
+                    <div class="row-3">
+                        <div class="input-box">
+                            <label>Nombres</label>
+                            <input id="nombreInput" type="text">
+                        </div>
+
+                        <div class="input-box">
+                            <label>Apellido Paterno</label>
+                            <input id="apellidoPInput" type="text">
+                        </div>
+
+                        <div class="input-box">
+                            <label>Apellido Materno</label>
+                            <input id="apellidoMInput" type="text">
+                        </div>
+                    </div>
+
+                    <div class="row-2">
+                        <div class="input-box">
+                            <label>Correo Electrónico</label>
+                            <input id="correoInput" type="email" disabled>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Teléfono</label>
+                            <input id="telefonoInput" type="text">
+                        </div>
+                    </div>
+
+                    <div class="row-2">
+                        <div class="input-box">
+                            <label>Documento</label>
+                            <input id="tipoDocInput" type="text" class="readonly">
+                        </div>
+
+                        <div class="input-box">
+                            <label>Número de Documento</label>
+                            <input id="numeroDocInput" type="text">
+                        </div>
+                    </div>
+
+                    <h2 class="subtitulo">Dirección Principal</h2>
+
+                    <div class="row-3">
+                        <div class="input-box">
+                            <label>Departamento</label>
+                            <select id="depInput"></select>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Provincia</label>
+                            <select id="provInput"></select>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Distrito</label>
+                            <select id="distInput"></select>
+                        </div>
+                    </div>
+
+                    <div class="full">
+                        <div class="input-box">
+                            <label>Dirección Exacta</label>
+                            <input id="direccionExactaInput" type="text">
+                        </div>
+                    </div>
+
+                    <h2 class="subtitulo">Método de Pago</h2>
+
+                    <div class="payment-selector">
+                        <button id="payTarjeta" class="pay-btn active">Tarjeta</button>
+                        <button id="payYape" class="pay-btn">Yape</button>
+                        <button id="payPlin" class="pay-btn">Plin</button>
+                    </div>
+
+                    <div id="paymentContent" class="payment-content"></div>
+
+                    <button class="btn-confirmar" id="btnFinalizarPago">
+                        Realizar Pago
+                    </button>
+
+                </div>
+
+                <!-- ======================================================= -->
+                <!-- DERECHA -->
+                <!-- ======================================================= -->
+                <aside class="checkout-card resumen-box" id="resumenCompraHTML"></aside>
+
+
+            </section>
+        </main>
+
+        <div id="toast" class="toast"></div>
+
+        <!-- ======================= MODAL ======================= -->
+        <div id="modalCompra" class="modal-compra">
+            <div class="modal-contenido">
+                <h2>¡Gracias por tu compra! </h2>
+                <p>Estamos procesando tu pedido...</p>
+                <p><small>Serás redirigido en unos segundos.</small></p>
+            </div>
+        </div>
+
+        <script src="js/DatosYPagos.js"></script>
+        <script src="js/footer.js"></script>
+
+    </body>
+</html>

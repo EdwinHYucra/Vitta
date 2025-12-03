@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mi Perfil - Vitta</title>
+        <link rel="icon" type="image/png" href="img/iconos/IconoP.png"/>
+
+        <!-- Estilos generales -->
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/perfil.css">
+    </head>
+
+    <body class="perfil-page">
+
+        <main class="perfil-wrapper">
+            <div class="contenedor perfil-layout">
+
+                <!-- MENU LATERAL -->
+                <aside class="perfil-menu">
+                    <h2 class="perfil-menu-titulo">Mi cuenta</h2>
+
+                    <button class="perfil-menu-item activo" data-seccion="personales">
+                        Datos personales
+                    </button>
+
+                    <button class="perfil-menu-item" data-seccion="direcciones">
+                        Direcciones
+                    </button>
+
+                    <button class="perfil-menu-item" data-seccion="configuracion">
+                        Configuración
+                    </button>
+
+                    <button class="perfil-menu-item salir" data-seccion="salir">
+                        Cerrar sesión
+                    </button>
+                </aside>
+
+                <!-- CONTENIDO -->
+                <section class="perfil-paneles">
+
+                    <!-- =================== DATOS PERSONALES =================== -->
+                    <section id="seccion-personales" class="perfil-seccion activa">
+                        <h1 class="perfil-titulo">Datos personales</h1>
+
+                        <div class="lista-datos">
+
+                            <!-- Nombre -->
+                            <div class="fila-dato">
+                                <div>
+                                    <div class="etiqueta-dato">Nombre y Apellidos</div>
+                                    <div class="valor-dato" id="datoNombreCompleto">—</div>
+                                </div>
+                                <button class="link-accion" data-edit="nombre">Editar</button>
+                            </div>
+
+                            <!-- Tipo de documento + número -->
+                            <div class="fila-dato fila-dni">
+                                <div>
+                                    <div class="etiqueta-dato">Tipo de documento</div>
+
+                                    <div class="dni-linea">
+                                        <span id="datoTipoDoc" class="valor-dato">DNI</span>
+                                        <span id="datoNumeroDoc" class="valor-secundario">Sin registrar</span>
+                                    </div>
+                                </div>
+
+                                <button class="link-accion" id="btnEditarDni">Editar</button>
+                            </div>
+
+                            <!-- Celular -->
+                            <div class="fila-dato">
+                                <div>
+                                    <div class="etiqueta-dato">Celular</div>
+                                    <div class="valor-dato" id="datoCelular">Sin registrar</div>
+                                </div>
+                                <button class="link-accion" data-edit="celular">Editar</button>
+                            </div>
+
+                            <!-- Correo -->
+                            <div class="fila-dato">
+                                <div>
+                                    <div class="etiqueta-dato">Correo</div>
+                                    <div class="valor-dato" id="datoCorreo">—</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- =================== DIRECCIONES =================== -->
+                    <section id="seccion-direcciones" class="perfil-seccion">
+                        <div class="cabecera-seccion">
+                            <h1 class="perfil-titulo">Mis direcciones</h1>
+                        </div>
+
+                        <div id="listaDirecciones" class="lista-direcciones">
+                            <!-- JS las inserta -->
+                        </div>
+
+                        <div class="acciones-direcciones">
+                            <button id="btnAgregarDireccion" class="btn-primario">
+                                Agregar dirección
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- =================== CONFIGURACIÓN =================== -->
+                    <section id="seccion-configuracion" class="perfil-seccion">
+                        <h1 class="perfil-titulo">Configuración</h1>
+
+                        <p class="texto-suave">Administra la seguridad de tu cuenta.</p>
+
+                        <form id="formContrasena" class="form-config">
+
+                            <div class="campo-form">
+                                <label>Contraseña actual</label>
+                                <input type="password" id="passActual" placeholder="••••••••">
+                            </div>
+
+                            <div class="campo-form">
+                                <label>Nueva contraseña</label>
+                                <input type="password" id="passNueva" placeholder="••••••••">
+                            </div>
+
+                            <div class="campo-form">
+                                <label>Confirmar nueva contraseña</label>
+                                <input type="password" id="passConfirmar" placeholder="••••••••">
+                            </div>
+
+                            <div class="acciones-config">
+                                <button type="submit" class="btn-primario">
+                                    Actualizar contraseña
+                                </button>
+                            </div>
+                        </form>
+                    </section>
+
+                </section>
+            </div>
+        </main>
+
+        <!-- PANEL DESLIZANTE PARA EDICIONES -->
+        <div id="overlayEdicion" class="overlay-edicion">
+            <div class="panel-edicion">
+                <div class="panel-edicion-header">
+                    <h2 id="tituloEdicion">Editar</h2>
+                    <button id="cerrarPanelEdicion" class="btn-cerrar-panel">&times;</button>
+                </div>
+
+                <form id="formEdicion" class="form-edicion">
+                    <!-- JS coloca aquí los campos -->
+                </form>
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="js/header.js"></script>
+        <script src="js/perfil.js"></script>
+        <script src="js/footer.js"></script>
+
+    </body>
+</html>

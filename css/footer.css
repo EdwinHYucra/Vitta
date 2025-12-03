@@ -1,0 +1,172 @@
+/* ===== Footer responsivo mejorado ===== */
+
+/* Contenedor general y espaciados */
+.pie {
+    color: #f6f7fb;
+    margin-top: 46px;
+    padding: 28px 0 20px; /* añade respiración vertical */
+}
+
+/* Ancho máximo coherente con el resto del sitio */
+.pie .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* sangría lateral en móviles */
+}
+
+/* Grilla fluida por tarjetas/columnas */
+.pie .bloques {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    padding: 28px 0;
+}
+
+/* Títulos y listas */
+.pie h4 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    letter-spacing: .2px;
+    color: #fff;
+}
+
+.pie .lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+/* Puntos decorativos */
+.lista.puntos li {
+    position: relative;
+    padding-left: 14px;
+}
+.lista.puntos li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F77D72;
+    box-shadow: 0 0 0 3px rgba(254, 206, 202, .15);
+}
+
+/* Enlaces y estados de interacción accesibles */
+.pie a {
+    color: #ffffff;
+    opacity: .94;
+    text-decoration: none;
+    word-break: break-word; /* evita desbordes en móviles */
+}
+.pie a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.pie a:focus-visible {
+    outline: 2px solid #FECECA;
+    outline-offset: 2px;
+    text-decoration: none;
+}
+
+/* Franja legal y métodos de pago */
+.pie-legal {
+    border-top: 1px solid rgba(255, 255, 255, .18);
+    padding: 14px 0 0;
+    color: #e9edf6;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    justify-content: space-between;
+}
+
+.pagos {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pago {
+    font-size: 12px;
+    padding: .35rem .65rem; /* mejor área táctil */
+    border-radius: 999px;
+    background: rgba(254, 228, 226, .15);
+    border: 1px solid rgba(254, 206, 202, .35);
+    color: #fff;
+    backdrop-filter: blur(2px);
+    line-height: 1;
+}
+.pago:hover {
+    background: rgba(238, 83, 69, .22);
+    border-color: rgba(238, 83, 69, .55);
+}
+
+/* ===== Variantes de fondo (sin cambios visuales, solo compat) ===== */
+.pie.pie--suave {
+    position: relative;
+    background:
+        radial-gradient(1200px 420px at 50% -30%, rgba(238, 83, 69, .10), transparent 60%),
+        linear-gradient(180deg, #B82A1D 0%, #98261C 45%, #7E261E 100%);
+}
+.pie.pie--suave::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #F77D72 0%, #EE5345 40%, #DB3627 100%);
+    opacity: .75;
+}
+.pie.pie--vidrio {
+    background: linear-gradient(180deg, #EE5345 0%, #DB3627 50%, #B82A1D 100%);
+}
+.pie.pie--vidrio .bloques {
+    gap: 22px;
+}
+.pie.pie--vidrio .bloque {
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .15);
+}
+.pie.pie--vidrio .lista.puntos li::before {
+    background: #FECECA;
+    box-shadow: none;
+}
+.pie.pie--vidrio .pago {
+    background: rgba(255, 255, 255, .10);
+    border-color: rgba(255, 255, 255, .25);
+}
+.pie.pie--vidrio .pago:hover {
+    background: rgba(255, 255, 255, .18);
+    border-color: rgba(255, 255, 255, .35);
+}
+
+/* ===== Breakpoints: 4 → 2 → 1 columnas y mejores alineaciones ===== */
+@media (max-width: 1024px) {
+    .pie .bloques {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .pie .bloques {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .pie-legal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .pagos {
+        justify-content: flex-start; /* o center si lo prefieres */
+    }
+}

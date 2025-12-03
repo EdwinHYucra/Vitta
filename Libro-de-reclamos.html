@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Vitta - Hoja de Reclamo / Queja</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="css/libro-de-reclamaciones.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="icon" type="image/png" href="img/iconos/IconoP.png"/>
+    </head>
+
+    <body>
+        <script src="js/header.js"></script>
+        <!-- Contenedor principal -->
+        <main class="reclamo-container fade-in">
+            <h2 class="reclamo-title">Hoja de Reclamo / Queja</h2>
+
+            <form class="reclamo-form" action="#" method="post" novalidate>
+                <!-- 1. Identificación del Cliente -->
+                <fieldset class="reclamo-fieldset">
+                    <legend>1. Identificación del Cliente</legend>
+
+                    <div class="grid-dos">
+                        <div>
+                            <label for="nombre">Nombre</label>
+                            <input id="nombre" name="nombre" type="text" placeholder="Nombre" required>
+                        </div>
+
+                        <div>
+                            <label for="apellido">Apellido</label>
+                            <input id="apellido" name="apellido" type="text" placeholder="Apellido" required>
+                        </div>
+                    </div>
+
+                    <div class="grid-dos">
+                        <div>
+                            <label for="dni">DNI</label>
+                            <input id="dni" name="dni" type="text" placeholder="Tu DNI" required>
+                        </div>
+
+                        <div>
+                            <label for="telefono">Teléfono</label>
+                            <input id="telefono" name="telefono" type="tel" placeholder="#########" required>
+                        </div>
+                    </div>
+
+                    <label for="direccion">Domicilio</label>
+                    <input id="direccion" name="direccion" type="text" placeholder="Domicilio completo" required>
+
+                    <label for="correo">Correo electrónico</label>
+                    <input id="correo" name="correo" type="email" placeholder="Ejemplo: usuario@gmail.com" required>
+                </fieldset>
+
+                <!-- 2. Identificación del Bien Contratado -->
+                <fieldset class="reclamo-fieldset">
+                    <legend>2. Identificación del Bien Contratado</legend>
+
+                    <label for="producto">Producto o Servicio</label>
+                    <input id="producto" name="producto" type="text" placeholder="Producto o servicio" required>
+
+                    <label for="monto">Monto Reclamado (si aplica)</label>
+                    <input id="monto" name="monto" type="text" placeholder="S/. 0.00">
+                </fieldset>
+
+                <!-- 3. Detalle del Reclamo o Queja -->
+                <fieldset class="reclamo-fieldset">
+                    <legend>3. Detalle del Reclamo o Queja</legend>
+
+                    <label for="tipo">Tipo de registro</label>
+                    <select id="tipo" name="tipo">
+                        <option value="reclamo">Reclamo</option>
+                        <option value="queja">Queja</option>
+                    </select>
+
+                    <label for="descripcion">Descripción del reclamo/queja</label>
+                    <textarea id="descripcion" name="descripcion" rows="5" placeholder="Describe lo sucedido..." required></textarea>
+
+                    <label for="pedido">Pedido del cliente</label>
+                    <textarea id="pedido" name="pedido" rows="3" placeholder="Qué esperas que se resuelva..."></textarea>
+                </fieldset>
+
+                <!-- 4. Fecha y Firma -->
+                <fieldset class="reclamo-fieldset">
+                    <legend>4. Fecha y Firma</legend>
+
+                    <div class="grid-datetime">
+                        <div>
+                            <label for="fecha">Fecha</label>
+                            <input id="fecha" name="fecha" type="date">
+                        </div>
+                        <div>
+                            <label for="hora">Hora</label>
+                            <input id="hora" name="hora" type="time">
+                        </div>
+                    </div>
+
+                    <label for="firma">Firma (nombre)</label>
+                    <input id="firma" name="firma" type="text" placeholder="Nombre para firma">
+                </fieldset>
+
+                <!-- Botón de envío -->
+                <div class="boton-container">
+                    <button type="submit" class="btn-enviar">Registrar Reclamo</button>
+                </div>
+            </form>
+        </main>
+
+        <script src="js/footer.js"></script>
+
+    </body>
+</html>
+

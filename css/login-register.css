@@ -1,0 +1,405 @@
+/* ===================== RESET ===================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* ===================== VISIBILIDAD DEFAULT ===================== */
+.container {
+    position: relative;
+    width: 900px;
+    max-width: 100%;
+    min-height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    margin: 40px;
+}
+
+.phone-wrapper {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===================== LOGIN SOCIAL & FORM ===================== */
+.social-login {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 70px;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-btn:hover {
+    border-color: #777;
+    background-color: #f7f7f7;
+}
+
+.social-login hr {
+    margin: 15px auto;
+    width: 80%;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.social-login p {
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* FORMULARIOS */
+.form-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    transition: all 0.5s ease;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 390px;
+    text-align: center;
+}
+
+form h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    background: #f4f4f4;
+    border: none;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+}
+
+form button {
+    margin-top: 14px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #ee5345;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.15s ease;
+}
+
+form button:hover {
+    background: #d9473c;
+}
+
+/* ===================== FIX CHECKBOXES ===================== */
+
+label.checkbox-fix {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    cursor: pointer !important;
+}
+
+
+label.checkbox-fix input[type="checkbox"] {
+    margin-top: 4px;   /* ajusta si quieres mover el checkbox hacia arriba/abajo */
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+
+
+/* ===================== OVERLAY (DESKTOP) ===================== */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(180deg,#ee5345 0%, #d9443b 100%);
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.6s ease-in-out, left 0.6s ease-in-out;
+    z-index: 10;
+
+}
+
+
+
+/* ===================== PANEL DESLIZANTE CENTRADO REAL ===================== */
+
+.overlay h2 {
+    margin-bottom: 20px;
+}
+
+.btn-overlay {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #fff;
+    color: #ee5345;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.btn-overlay:hover {
+    background: #f1f1f1;
+}
+
+.overlay-panel {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.overlay-left {
+    left: 0;
+}
+.overlay-right {
+    right: 0;
+}
+
+
+
+/* ===================== BOTÓN CIRCULAR (CASITA) ===================== */
+.btn-circular {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: all 0.4s ease-in-out;
+    z-index: 20;
+    padding: 6px;
+}
+
+.btn-circular img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ===================== TOGGLE ANIMACIÓN ===================== */
+#toggle:checked ~ .overlay {
+    transform: translateX(100%);
+}
+
+/* Estados de paneles */
+#toggle:not(:checked) ~ .overlay .overlay-left {
+    opacity: 1;
+}
+#toggle:not(:checked) ~ .overlay .overlay-right {
+    opacity: 0;
+}
+
+#toggle:checked ~ .overlay .overlay-left {
+    opacity: 0;
+}
+#toggle:checked ~ .overlay .overlay-right {
+    opacity: 1;
+}
+
+/* Mover casita al otro lado cuando está en modo login */
+#toggle:checked ~ .overlay .btn-circular {
+    left: auto;
+    right: 15px;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 900px) {
+
+    .container {
+        display: none !important;
+    }
+
+    .phone-wrapper {
+        display: block !important;
+        max-width: 430px;
+        margin: auto;
+        overflow-x: hidden;
+    }
+
+    /* ================= HEADER DEL TELÉFONO ================= */
+    .header-area {
+        background: #ee5345;
+        color: white;
+        text-align: center;
+        padding: 55px 20px 110px;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        position: relative;
+        z-index: 0; /* ← AGREGADO: el header va ATRÁS */
+    }
+
+    .header-area h1 {
+        font-size: 32px;
+        font-weight: 900;
+        margin-bottom: 6px;
+    }
+
+    .header-area p {
+        font-size: 15px;
+        color: #fff;
+        opacity: 0.95;
+    }
+
+    .btn-casita-phone {
+        position: absolute;
+        top: 22px;
+        left: 18px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fff;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+        padding: 6px;
+        z-index: 10;
+    }
+
+    /* ================= TARJETA LOGIN ================= */
+    .form-area {
+        background: #fff;
+        margin: -70px 18px 30px;
+        padding: 22px;
+        border-radius: 18px;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+        position: relative;
+        z-index: 20; /* ← AGREGADO: tarjeta ENCIMA */
+    }
+
+    .form-area h2 {
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .form-area p {
+        text-align: center;
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 18px;
+    }
+
+    .form-area label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-area input {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0 14px;
+        border: 1px solid #e6e6e6;
+        border-radius: 10px;
+        background: #fafafa;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        background: #ee5345;
+        color: #fff;
+        border: none;
+        border-radius: 28px;
+        font-weight: 700;
+    }
+
+    .switch-btn {
+        width: 100%;
+        padding: 12px;
+        background: transparent;
+        border: none;
+        color: #555;
+        font-weight: 600;
+    }
+}
+
+
+/* ===================== CLASES DE UTILIDAD ===================== */
+/* Clase usada por tu JS: ocultar/mostrar secciones mobile */
+.hidden {
+    display: none !important;
+}
+
+/* Evitar que aparezca scroll horizontal por error */
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

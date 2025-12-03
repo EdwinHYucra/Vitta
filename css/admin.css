@@ -1,0 +1,305 @@
+/* 
+   ESTILOS GENERALES DEL PANEL
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #fafafa;
+    color: #333;
+}
+
+/* 
+   LAYOUT GENERAL
+ */
+
+.estructura-admin {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 
+   BARRA LATERAL
+ */
+
+.barra-lateral-admin {
+    width: 240px;
+    background: #ffffff;
+    border-right: 1px solid #e6e6e6;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.logo-panel-admin {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo-panel-titulo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #EE5345;
+}
+
+.logo-panel-sub {
+    font-size: 14px;
+    color: #777;
+}
+
+.menu-lateral-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boton-lateral-admin {
+    padding: 10px 14px;
+    background: transparent;
+    border-radius: 8px;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.boton-lateral-admin:hover {
+    background: #FEE4E2;
+}
+
+.boton-lateral-admin.activo {
+    background: #EE5345;
+    color: white;
+}
+
+.boton-lateral-salir {
+    margin-top: auto;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #DB3627;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* 
+   CONTENIDO PRINCIPAL
+ */
+
+.contenido-admin {
+    margin-left: 260px;
+    padding: 35px 40px;
+    width: calc(100% - 260px);
+}
+
+/* 
+   TABS SUPERIORES
+ */
+
+.tabs-admin {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.tab-admin {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.tab-admin:hover {
+    background: #FEE4E2;
+}
+
+.tab-admin.activo {
+    background: #EE5345;
+    color: white;
+    border-color: #EE5345;
+}
+
+/* 
+   VISTAS DEL PANEL
+ */
+
+.vista-admin {
+    display: none;
+}
+
+.vista-admin.vista-activa {
+    display: block;
+}
+
+.titulo-vista {
+    font-size: 22px;
+    font-weight: bold;
+    color: #DB3627;
+    margin-bottom: 10px;
+}
+
+/* 
+   BOTONES
+ */
+
+.boton-primario-admin {
+    background: #EE5345;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.boton-secundario-admin {
+    background: #FEE4E2;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 10px;
+    color: #DB3627;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* 
+   TABLAS
+ */
+
+.contenedor-tabla-admin {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-admin th {
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+    color: #444;
+    background: #f8f8f8;
+}
+
+.tabla-admin td {
+    padding: 12px;
+    border-top: 1px solid #eee;
+}
+
+.img-mini {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Botones de acción */
+.accion-editar {
+    background: #EE5345;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.accion-eliminar {
+    background: #DB3627;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 
+   FORMULARIOS
+ */
+
+.formulario-admin {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo-formulario label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* 
+   MODALES
+ */
+
+.overlay-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-modal.activo {
+    display: flex;
+}
+
+.modal-admin {
+    background: white;
+    padding: 30px;
+    width: 420px;
+    border-radius: 14px;
+    position: relative;
+}
+
+.boton-cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+}
+.logo-panel-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.logo-panel-link:hover .logo-panel-titulo {
+    opacity: 0.8;
+}

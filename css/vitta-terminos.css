@@ -1,0 +1,100 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 14 oct. 2025, 21:49:21
+    Author     : ehuan
+*/
+html{
+    box-sizing:border-box
+}
+*,*::before,*::after{
+    box-sizing:inherit
+}
+html,body{
+    margin:0;
+    padding:0
+}
+body{
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sansserif;
+    background:#FEF3F2; /* 50 */
+    color:#450F0A; /* 950 */
+}
+.wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:32px 20px 56px
+}
+header{
+    margin:0 0 16px
+}
+.marca{
+    color:#EE5345;
+    font-weight:700;
+    letter-spacing:.3px
+}
+h1{
+    margin:8px 0 4px;
+    font-size:28px;
+    line-height:1.25;
+    color:#EE5345
+}
+.meta{
+    color:#7E261E;
+    font-size:14px
+}
+h2{
+    font-size:20px;
+    margin:28px 0 10px;
+    color:#98261C
+}
+h3{
+    font-size:16px;
+    margin:24px 0 8px;
+    color:#98261C
+}
+p{
+    margin:10px 0
+}
+ul{
+    margin:10px 0 10px 20px
+}
+.box{
+    background:#fff;
+    border:1px solid #FEE4E2;
+    border-radius:10px;
+    padding:
+        18px 18px;
+    box-shadow:0 1px 0 rgba(0,0,0,.03)
+}
+a{
+    color:#DB3627;
+    text-decoration:none
+}
+a:hover{
+    text-decoration:underline
+}
+a:focus-visible{
+    outline:3px solid #F77D72;
+    outline-offset:2px
+}
+.resalte{
+    background:#FECECA;
+    padding:2px 6px;
+    border-radius:6px
+}
+.nota{
+    font-size:14px;
+    color:#7E261E;
+    background:#fff;
+    border-left:3px solid
+        #DB3627;
+    padding:10px 12px;
+    border-radius:8px
+}
+footer{
+    margin-top:40px;
+    font-size:14px;
+    color:#7E261E
+}

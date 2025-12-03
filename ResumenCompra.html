@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vitta - Resumen de tu Compra</title>
+
+    <link rel="stylesheet" href="css/ResumenCompra.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" type="image/png" href="img/iconos/IconoP.png" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <script src="js/header.js"></script>
+
+    <main class="cuerpo">
+
+        <h1 class="titulo-pagina">Resumen de tu Compra</h1>
+
+        <section class="resumen-wrapper">
+
+            <!-- IZQUIERDA: Productos -->
+            <div class="card card-productos">
+
+                <h2 class="subtitulo">Productos</h2>
+
+                <table class="tabla-productos">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaProductos"></tbody>
+
+                    <tbody>
+                        <tr class="fila-envio">
+                            <td>Envío</td>
+                            <td>—</td>
+                            <td id="costoEnvio">S/ 0.00</td>
+                        </tr>
+
+                        <tr class="fila-total">
+                            <td>Total</td>
+                            <td>—</td>
+                            <td id="totalFinal">S/ 0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- DERECHA: Información del cliente -->
+            <div class="card card-cliente">
+
+                <h2 class="subtitulo">Información del Comprador</h2>
+
+                <div id="infoCliente" class="info-box"></div>
+
+                <h2 class="subtitulo" style="margin-top:25px;">Método de Pago</h2>
+
+                <div id="infoPago" class="info-box"></div>
+
+            </div>
+
+        </section>
+
+        <!-- BOTONES -->
+        <div class="botones-abajo">
+            <a href="index.html" class="btn-volver">Ir al Inicio</a>
+            <a href="HistorialPedidos.html" class="btn-historial">Ver Historial</a>
+        </div>
+
+    </main>
+
+    <script src="js/ResumenCompra.js"></script>
+    <script src="js/footer.js"></script>
+
+</body>
+
+</html>

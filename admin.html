@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Panel de Administración – Vitta</title>
+
+    <link rel="icon" type="image/png" href="img/iconos/IconoP.png" />
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="estructura-admin">
+
+        <!-- BARRA LATERAL -->
+        <aside class="barra-lateral-admin">
+
+            <div class="logo-panel-admin">
+                <a href="index.html" class="logo-panel-link">
+                    <span class="logo-panel-titulo">Vitta</span>
+                </a>
+                <span class="logo-panel-sub">Panel Admin</span>
+            </div>
+
+            <nav class="menu-lateral-admin">
+                <button class="boton-lateral-admin activo" data-vista="productos">Productos</button>
+                <button class="boton-lateral-admin" data-vista="categorias">Categorías</button>
+                <button class="boton-lateral-admin" data-vista="inventario">Inventario</button>
+                <button class="boton-lateral-admin" data-vista="perfil">Perfil</button>
+            </nav>
+
+            <button id="btnSalirLateral" class="boton-lateral-salir">
+                Cerrar sesión
+            </button>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="contenido-admin">
+
+            <!-- TABS SUPERIORES -->
+            <div class="tabs-admin">
+                <button class="tab-admin activo" data-vista="productos">Productos</button>
+                <button class="tab-admin" data-vista="categorias">Categorías</button>
+                <button class="tab-admin" data-vista="inventario">Inventario</button>
+                <button class="tab-admin" data-vista="perfil">Perfil</button>
+            </div>
+
+            <!-- VISTA PRODUCTOS -->
+            <section class="vista-admin vista-activa" id="vista-productos">
+
+                <h2 class="titulo-vista">Productos</h2>
+                <p>Administra tu catálogo Vitta.</p>
+
+                <button id="btnNuevoProducto" class="boton-primario-admin">+ Nuevo producto</button>
+
+                <div class="contenedor-tabla-admin">
+                    <table class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaProductosBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- VISTA CATEGORÍAS -->
+            <section class="vista-admin" id="vista-categorias">
+
+                <h2 class="titulo-vista">Categorías</h2>
+                <p>Gestiona categorías del catálogo.</p>
+
+                <button id="btnNuevaCategoria" class="boton-primario-admin">+ Nueva categoría</button>
+
+                <div class="contenedor-tabla-admin">
+                    <table class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Slug</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaCategoriasBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- VISTA INVENTARIO -->
+            <section class="vista-admin" id="vista-inventario">
+
+                <h2 class="titulo-vista">Inventario</h2>
+                <p>Ajusta existencias.</p>
+
+                <div class="contenedor-tabla-admin">
+                    <table class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Stock</th>
+                                <th>Ajustar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaInventarioBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- VISTA PERFIL -->
+            <section class="vista-admin" id="vista-perfil">
+
+                <h2 class="titulo-vista">Perfil del administrador</h2>
+
+                <form id="formPerfilAdmin" class="formulario-admin">
+
+                    <div class="campo-formulario">
+                        <label>Nombre</label>
+                        <input type="text" id="perfilNombre">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Apellidos</label>
+                        <input type="text" id="perfilApellido">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Correo</label>
+                        <input type="email" id="perfilCorreo" disabled>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>Celular</label>
+                        <input type="text" id="perfilTelefono">
+                    </div>
+
+                    <button class="boton-primario-admin" type="submit">Guardar</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL PRODUCTO -->
+    <div class="overlay-modal" id="overlayProducto">
+        <div class="modal-admin">
+
+            <button class="boton-cerrar-modal" data-close-modal="producto">&times;</button>
+
+            <h2 id="tituloModalProducto">Nuevo producto</h2>
+
+            <form id="formProducto" class="formulario-admin">
+                <input type="hidden" id="productoId">
+
+                <div class="campo-formulario">
+                    <label>Nombre</label>
+                    <input type="text" id="productoNombre" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Categoría</label>
+                    <select id="productoCategoria"></select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Precio</label>
+                    <input type="number" id="productoPrecio" step="0.01" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Stock</label>
+                    <input type="number" id="productoStock" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Imagen principal (subir archivo)</label>
+                    <input type="file" id="productoImagenArchivo" accept="image/*">
+                </div>
+
+                <div class="campo-formulario">
+                    <label>URL directa de imagen principal</label>
+                    <input type="text" id="productoImagenUrl">
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Miniaturas (URLs separadas por coma)</label>
+                    <input type="text" id="productoMiniaturas" placeholder="url1, url2, url3">
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Descripción breve</label>
+                    <textarea id="productoDescripcionBreve" rows="2"
+                        placeholder="Texto corto que aparece en las tarjetas e inicio."></textarea>
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Detalles del producto</label>
+                    <textarea id="productoDescripcionDetalles" rows="4"
+                        placeholder="Información más completa que aparece en la vista de detalle."></textarea>
+                </div>
+
+                <button type="submit" class="boton-primario-admin">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL CATEGORÍA -->
+    <div class="overlay-modal" id="overlayCategoria">
+        <div class="modal-admin">
+
+            <button class="boton-cerrar-modal" data-close-modal="categoria">&times;</button>
+
+            <h2 id="tituloModalCategoria">Nueva categoría</h2>
+
+            <form id="formCategoria" class="formulario-admin">
+                <input type="hidden" id="categoriaId">
+
+                <div class="campo-formulario">
+                    <label>Nombre</label>
+                    <input type="text" id="categoriaNombre" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label>Slug</label>
+                    <input type="text" id="categoriaSlug" required>
+                </div>
+
+                <!-- Este input file se conserva, pero NO se usará (por seguridad del navegador) -->
+                <div class="campo-formulario">
+                    <label>Imagen (subir archivo)</label>
+                    <input type="file" id="categoriaImagenArchivo" accept="image/*">
+                </div>
+
+                <!-- ESTE es el campo que realmente usamos -->
+                <div class="campo-formulario">
+                    <label>URL directa de imagen</label>
+                    <input type="text" id="categoriaImagenUrl" placeholder="img/Categorias/micategoria.jpg">
+                </div>
+
+                <button type="submit" class="boton-primario-admin">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="img/iconos/IconoP.png"/>
+        <title>Vitta - Formulario de Contacto</title>
+        <link rel="stylesheet" href="css/contactenos.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+    </head>
+
+    <body>
+        <script src="js/header.js"></script>
+        <!-- FORMULARIO DE CONTACTO -->
+        <section class="contact-container fade-in">
+            <h1>CONTÁCTENOS</h1>
+            <form action="#" method="post">
+                <!-- Nombre -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <!-- Correo -->
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Tu correo" required>
+
+                <!-- Asunto -->
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>
+
+                <!-- Mensaje -->
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+                <!-- Botón -->
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+
+        </section>
+        <script src="js/footer.js"></script>
+
+    </body>
+</html>
