@@ -1,6 +1,6 @@
 //        VERSIONADO VITTA (Productos y Categorías)
-const PRODUCTOS_VERSION = "1.9";      // cambia esto cuando actualices productosBase
-const CATEGORIAS_VERSION = "1.9";     // cambia esto cuando actualices categoriasBase
+const PRODUCTOS_VERSION = "1.9.1";      // cambia esto cuando actualices productosBase
+const CATEGORIAS_VERSION = "1.9.1";     // cambia esto cuando actualices categoriasBase
 
 //   INICIALIZAR CATALOGO SOLO SI ES NUEVO
 //  O SI LA VERSIÓN ES DIFERENTE A LA ACTUAL
