@@ -596,9 +596,8 @@ const productosBase = [
         stock: 20, 
         imagenPrincipal: "img/Productos/lacteos/cremaLeche.webp", 
         miniaturas: [
-            "img/Productos/lacteos/cremaLeche2.png",
-            "img/Productos/lacteos/cremaLeche3.png",
-            "img/Productos/lacteos/cremaLeche4.png"
+            "img/Productos/lacteos/cremaLeche2.webp",
+            "img/Productos/lacteos/cremaLeche3.webp"
         ], 
         descripcionBreve: "Crema de leche para repostería.", 
         descripcionDetalles: "300g de crema de leche, perfecta para postres y preparaciones culinarias." 
